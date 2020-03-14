@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Python Backend</title>
+	</head>
+	<body>
+		<input type="text" id="txt_x" placeholder="x = ?" />
+		<br />
+		<input type="text" id="txt_y" placeholder="y = ?" />
+		<br />
+		<button onclick="btnAddClick();">
+			CALL ADD
+		</button>
+
+		<button onclick="btnMulClick();">
+			CALL MULTIPLY
+		</button>
+		<br />
+		<span id="spn_res">RESULT</span>
+
+		<script src="./js/jquery.min.js"></script>
+		<script>
+			function btnAddClick() {
+				let x = parseInt($('#txt_x').val());
+				let y = parseInt($('#txt_y').val());
+				let func = 'add';
+				$.post('../backend/srv.py', { func, x, y }, function(d, s) {
+					console.log(d);
+					$('#spn_res').text(d['res']);
+				});
+			}
+
+			function btnMulClick() {
+				let x = parseInt($('#txt_x').val());
+				let y = parseInt($('#txt_y').val());
+				let func = 'mul';
+				$.post('../backend/srv.py', { func, x, y }, function(d, s) {
+					console.log(d);
+					$('#spn_res').text(d['res']);
+				});
+			}
+		</script>
+	</body>
+</html>
