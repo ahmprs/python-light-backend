@@ -9,26 +9,38 @@
 		<link rel="stylesheet" href="./css/main.css" />
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/app.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<h2>This is a simple Python backend project</h2>
-		<button onclick="btnSayHello();">Say Hello</button>
+		<h2 class="alert alert-info text-center">This is a simple Python backend project</h2>
+		<button class="btn btn-primary" onclick="btnSayHello();">Say Hello</button>
 		<br />
 		<span id="spn_say_hello">
 			[Server Response]
 		</span>
 		<hr />
-		<input type="text" id="txt_x" placeholder="x = ?" />
-		<br />
-		<input type="text" id="txt_y" placeholder="y = ?" />
-		<br />
-		<button onclick="btnAddClick();">
+		<div class="col-auto">
+			<label class="sr-only" for="inlineFormInput">Supply x:</label>
+			<input type="text" class="form-control mb-2" id="txt_x" placeholder="x = ?" />
+			<label class="sr-only" for="inlineFormInput">Supply y:</label>
+			<input type="text" class="form-control mb-2" id="txt_y" placeholder="y = ?" />
+		</div>
+
+		<button class="btn btn-primary" onclick="btnAddClick();">
 			CALL ADD
 		</button>
 		<br />
 		<span id="spn_res">[RESULT]</span>
 		<hr />
-		<p>
+		<p class="alert alert-success">
 			Note: press F12 then open console tab to see the server response json packets
 		</p>
 	</body>
