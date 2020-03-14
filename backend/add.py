@@ -8,10 +8,6 @@ def add(x, y):
     return x+y
 
 
-def mul(x, y):
-    return x*y
-
-
 def onSuccess(res):
     r = '"success":"true", "res":"{}"'.format(res)
     r = '{' + r + '}'
@@ -30,7 +26,6 @@ print()
 form = cgi.FieldStorage()
 x = form.getvalue("x")
 y = form.getvalue("y")
-func = form.getvalue("func")
 z = 0
 
 try:
@@ -41,11 +36,5 @@ except Exception as ex:
     print(onFailure('BAD PARAMETERS '))
     pass
 else:
-    if(func == 'add'):
-        z = add(x, y)
-        print(onSuccess(z))
-    elif(func == 'mul'):
-        z = mul(x, y)
-        print(onSuccess(z))
-    else:
-        print(onFailure('UNSUPPORTED FUNCTION'))
+    z = add(x, y)
+    print(onSuccess(z))
