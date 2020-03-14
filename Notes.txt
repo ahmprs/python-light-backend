@@ -1,1 +1,7 @@
 // Important notes
+
+1- find the location of your python executable and modify the .py files
+2- put the files in httpd folder (in the case of apache web server)
+3- trace the url, it should be something like this:
+
+http://localhost/python-light-backned/python-light-backend/frontend/index.html
