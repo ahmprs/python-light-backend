@@ -6,13 +6,17 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Python Backend</title>
 
+		<link rel="stylesheet" href="./css/main.css" />
 		<script src="./js/jquery.min.js"></script>
 		<script src="./js/app.js"></script>
 	</head>
 	<body>
+		<h2>This is a simple Python backend project</h2>
 		<button onclick="btnSayHello();">Say Hello</button>
 		<br />
-		<span id="spn_say_hello">BACKEND-REPLY-NONE</span>
+		<span id="spn_say_hello">
+			[Server Response]
+		</span>
 		<hr />
 		<input type="text" id="txt_x" placeholder="x = ?" />
 		<br />
@@ -22,7 +26,10 @@
 			CALL ADD
 		</button>
 		<br />
-		<br />
-		<span id="spn_res">RESULT</span>
+		<span id="spn_res">[RESULT]</span>
+		<hr />
+		<p>
+			Note: press F12 then open console tab to see the server response json packets
+		</p>
 	</body>
 </html>

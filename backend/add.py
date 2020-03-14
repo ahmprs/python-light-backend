@@ -1,40 +1,21 @@
 #!C:\Users\elipsa\AppData\Local\Programs\Python\Python37\python.exe
 # -*- coding: utf-8 -*-
 
-import cgi
+from ahmUtil import common
 
+# capture http arguments
+http = common.Http()
 
-def add(x, y):
-    return x+y
+# put an http response header for json compliance
+# Content-type: application/json
+common.putHttpRespHeaders()
 
+# grab parameters
+x = http.getPostArgAsInt('x', 0)
+y = http.getPostArgAsInt('y', 0)
 
-def onSuccess(res):
-    r = '"success":"true", "res":"{}"'.format(res)
-    r = '{' + r + '}'
-    return r
+# do logics
+z = x + y
 
-
-def onFailure(err):
-    r = '"success":"false", "err":"{}"'.format(err)
-    r = '{' + r + '}'
-    return r
-
-
-print("Content-type: application/json")
-print()
-
-form = cgi.FieldStorage()
-x = form.getvalue("x")
-y = form.getvalue("y")
-z = 0
-
-try:
-    x = int(x)
-    y = int(y)
-    pass
-except Exception as ex:
-    print(onFailure('BAD PARAMETERS '))
-    pass
-else:
-    z = add(x, y)
-    print(onSuccess(z))
+# send back response
+print(common.resp(1, z))

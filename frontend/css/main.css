@@ -1,0 +1,11 @@
+html {
+  padding: 10px 20px;
+}
+
+input[type="text"] {
+  margin-bottom: 5px;
+}
+
+button {
+  margin-bottom: 5px;
+}

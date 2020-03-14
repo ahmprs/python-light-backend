@@ -8,7 +8,7 @@ function btnAddClick() {
 }
 
 function btnSayHello() {
-	$.post('../backend/say-hello.py', {}, function(d, s) {
+	$.post('../backend/sayHello.py', {}, function(d, s) {
 		console.log(d);
 		$('#spn_say_hello').text(d['res']);
 	});
