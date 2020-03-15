@@ -14,7 +14,10 @@ putHttpRespHeaders()
 registerNewSession()
 setSessionVal('height', '180')
 setSessionVal('height', '181')
-forget()
-d = getSessionVal('height')
+setSessionVal('msg', 'Wish you happay life')
 
-print(resp(1,  d))
+# call to this method removes session information
+# forget()
+msg = getSessionVal('msg')
+
+print(resp(1,  "Hi from python cgi backend. {0}".format(msg)))
