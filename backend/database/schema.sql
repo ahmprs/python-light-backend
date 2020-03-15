@@ -18,7 +18,8 @@ CREATE TABLE `db_test_1`.`tbl_sessions`(
     `session_name` VARCHAR(200) NOT NULL,
     `session_active` INT NOT NULL,
     `session_desc` VARCHAR(500) NULL,
-    PRIMARY KEY(`session_id`)
+    PRIMARY KEY(`session_id`),
+    UNIQUE (`session_name`)
 ) ENGINE = InnoDB CHARSET = utf8 COLLATE utf8_bin; 
 
 CREATE TABLE `db_test_1`.`tbl_session_data`(
