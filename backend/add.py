@@ -1,16 +1,14 @@
 #!C:\Users\elipsa\AppData\Local\Programs\Python\Python37\python.exe
 # -*- coding: utf-8 -*-
 
-from ahmUtil import common
+from ahmUtil.common import resp
+from ahmUtil.http_header import putHttpRespHeaders
+from ahmUtil.http import Http
 
-# capture http arguments
-http = common.Http()
-
-# put an http response header for json compliance
-# Content-type: application/json
-common.putHttpRespHeaders()
+putHttpRespHeaders()
 
 # grab parameters
+http = Http()
 x = http.getPostArgAsInt('x', 0)
 y = http.getPostArgAsInt('y', 0)
 
@@ -18,4 +16,4 @@ y = http.getPostArgAsInt('y', 0)
 z = x + y
 
 # send back response
-print(common.resp(1, z))
+print(resp(1, z))
