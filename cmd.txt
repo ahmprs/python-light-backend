@@ -1,0 +1,1 @@
+http://localhost/1-WebApps/python-light-backned/python-light-backend/frontend
